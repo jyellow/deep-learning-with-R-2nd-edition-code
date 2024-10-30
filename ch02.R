@@ -1,4 +1,8 @@
 ## ----setup, include=FALSE-------------------------------------------------
+## 添加tensorflow的Python环境
+library(reticulate)
+use_python("/opt/anaconda3/envs/tf_2_13_1_py_3_10/bin/python")
+
 tensorflow::as_tensor(1)
 
 
@@ -117,6 +121,7 @@ plot(as.raster(abs(255 - digit), max = 255))
 train_labels[5]
 
 
+
 ## -------------------------------------------------------------------------
 my_slice <- train_images[10:99, , ]
 dim(my_slice)
@@ -145,7 +150,7 @@ layer_dense(units = 512, activation = "relu")
 
 
 ## ---- eval = FALSE--------------------------------------------------------
-## output <- relu(dot(W, input) + b)
+# output <- relu(dot(W, input) + b)
 
 
 ## -------------------------------------------------------------------------
@@ -210,6 +215,7 @@ str(y)
 
 ## -------------------------------------------------------------------------
 Y <- y[rep(1, 32), ]
+dim(Y)
 str(Y)
 
 

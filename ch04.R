@@ -1,4 +1,6 @@
 ## ----setup, include = FALSE-----------------------------------------------
+library(reticulate)
+use_python("/opt/anaconda3/envs/tf_2_13_1_py_3_10/bin/python")
 tensorflow::as_tensor(1)
 
 

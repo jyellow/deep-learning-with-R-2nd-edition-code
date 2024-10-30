@@ -1,3 +1,7 @@
+## ----init python env
+library(reticulate)
+use_python("/opt/anaconda3/envs/tf_2_13_1_py_3_10/bin/python")
+
 ## ----setup, include = FALSE-----------------------------------------------
 library(tensorflow)
 library(keras)
@@ -30,7 +34,7 @@ tf_tensor + tf_tensor
 
 
 ## -------------------------------------------------------------------------
-methods(class = "tensorflow.tensor")
+methods(class = "tensorflow.tensor", all.names = T, dropPath = T)
 
 
 ## -------------------------------------------------------------------------
@@ -40,11 +44,11 @@ tf_tensor$ndim
 ## -------------------------------------------------------------------------
 as_tensor(1)$ndim
 as_tensor(1:2)$ndim
-
+as_tensor(1:2)
 
 ## -------------------------------------------------------------------------
 tf_tensor$shape
-
+shape(tf_tensor)
 
 ## -------------------------------------------------------------------------
 methods(class = class(shape())[1])
